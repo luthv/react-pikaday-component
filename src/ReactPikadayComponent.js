@@ -92,7 +92,7 @@ class ReactPikadayComponent extends React.Component {
     _setupPikaday() {
         const el = this.refs.pikaday;
         const { requestChange } = this._getValueLink(this.props);
-        const { value, onChange, valueLink, ...pikadayOptions } = this.props; // eslint-disable-line no-unused-vars
+        const { ...pikadayOptions } = this.props; // eslint-disable-line no-unused-vars
         const options = Object.assign({}, pikadayOptions, {
             field: el,
             onSelect: requestChange

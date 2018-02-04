@@ -7,15 +7,15 @@
     "example": "example"
   },
   "scripts": {
-    "build": "npm run build-babel && npm run build-dist-dev && npm run build-dist-prod",
-    "build-dist-dev": "NODE_ENV=development webpack --config webpack.config --colors",
-    "build-dist-prod": "NODE_ENV=production webpack --config webpack.config --progress --colors -p",
+    "build": "npm run build-babel & npm run build-dist-dev & npm run build-dist-prod",
+    "build-dist-dev": "$env:NODE_ENV=\"development\" & webpack --config webpack.config --colors",
+    "build-dist-prod": "$env:NODE_ENV=\"production\" & webpack --config webpack.config --progress --colors -p",
     "build-babel": "babel ./src/ReactPikadayComponent.js --out-file index.js",
     "build-example": "NODE_ENV=production browserify ./example/index.js -t [ babelify --presets [ es2015 stage-0 react ] --plugins [ transform-object-assign ] ] | uglifyjs -cm > ./example/bundle.min.js",
     "lint": "eslint ./src",
     "lint-dev": "eslint --fix ./src",
-    "test": "echo \"Comming soon ;)\" && exit 0",
-    "prepublish": "npm run build-babel && npm run build-dist-prod"
+    "test": "echo \"Comming soon ;)\" & exit 0",
+    "prepublish": "npm run build-babel & npm run build-dist-prod"
   },
   "keywords": [
     "react",
